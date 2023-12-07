@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Delights</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background-color: black;
+        }
+
+/* Add different gradients for each section */
+#home {
+    background: linear-gradient(45deg, rgb(67, 2, 64), #6c062d, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientHome 5s ease infinite;
+}
+
+#gallery {
+    background: linear-gradient(45deg, #370101, #e8b10c, #180345, #180345);
+    background-size: 400% 400%;
+    animation: gradientGallery 5s ease infinite;
+}
+
+#recipes {
+    background: linear-gradient(45deg, #590004, #8c0024, #a61a38, #cc223e);
+    background-size: 400% 400%;
+    animation: gradientRecipes 5s ease infinite;
+}
+
+#contact {
+    background: linear-gradient(45deg, #001f3f, #003366, #004080, #00509e);
+    background-size: 400% 400%;
+    animation: gradientContact 5s ease infinite;
+}
+
+@keyframes gradientHome {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientGallery {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientRecipes {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientContact {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ... rest of your styles ... */
+
+
+        header {
+            background: linear-gradient(45deg, #121212, #000033, #000044, #000055, #000066);
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        nav {
+            background: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        #featuredRecipe{
+            border: 1px solid #ddd;
+            padding: 28px 0 20px 0;
+            margin: 20px auto; /* Updated margin to 'auto' for centering horizontally */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #051e25;
+            width: 22rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+        }
+
+        .recipe {
+            border: 1px solid #ddd;
+            padding: 7px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #051e25;
+        }
+
+
+        .video-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .video-container iframe {
+            width: 300px; /* Adjust as needed */
+            height: 169px; /* Adjust as needed */
+            margin: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        #gallery {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 45%;
+            height: 230px;
+            border-radius: 8px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .announcement {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: marqueeAnimation 10s linear infinite;
+        }
+
+        @keyframes marqueeAnimation {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Foodie Delights</h1>
+        <p>Explore the art of cooking and discover delicious recipes.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+
+        <h2>Welcome to Foodie Delights</h2>
+        <p>Discover a world of culinary delights with our collection of mouth-watering recipes.</p>
+        <button onclick="showFeaturedRecipe()">Featured Recipe</button>
+        <div class="recipe" id="featuredRecipe" style="display: none;">
+            <h3>Spicy Grilled Salmon</h3>
+        </div>
+        <p>Try our spicy grilled salmon recipe for a flavorful and healthy meal option.</p>
+    </section>
+    <section id="gallery">
+        <h2>Food Gallery</h2>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="images/food1.jpg" alt="Food Image 1">
+            </div>
+
+            <div class="mySlides">
+                <img src="images/food2.jpg" alt="Food Image 2">
+            </div>
+
+            <div class="mySlides">
+                <img src="images/food3.jpg" alt="Food Image 3">
+            </div>
+
+            <!-- Add more slides as needed -->
+
+            <!-- Navigation dots -->
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="recipes">
+        <h2>Popular Recipes</h2>
+        <div class="recipe">
+            <div class="video-container" id="videoSlideshow">
+                <!-- Add video thumbnails as slides -->
+                <div class="videoSlide" id="video1"></div>
+                <div class="videoSlide" id="video2"></div>
+                <div class="videoSlide" id="video3"></div>
+                <!-- Add more divs as needed -->
+            </div>
+            <p>Indulge in the rich flavors of these popular recipes.</p>
+        </div>
+    </section>
+
+   
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Your email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <div class="announcement">
+        <p>Check out our latest recipes and cooking tips!</p>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2023 Foodie Delights by Rolano Rebelo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Slideshow script
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+      
+
+        function showFeaturedRecipe() {
+    var featuredRecipe = document.getElementById("featuredRecipe");
+    featuredRecipe.style.display = "block";
+
+    // Add the YouTube short embedded code
+    featuredRecipe.innerHTML = '<iframe width="300" height="169" src="https://www.youtube.com/embed/aj5tCjyqQwk" frameborder="0" allowfullscreen></iframe>';
+}
+
+
+    
+        function loadYouTubeAPI() {
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        // This function is called when the YouTube API code is downloaded.
+        function onYouTubeIframeAPIReady() {
+            // Replace these video IDs with your actual video IDs
+            createPlayer('video1', 'lagDGJnKpdI');
+            createPlayer('video2', 'UXtrScuC30E');
+            createPlayer('video3', 'rc_wlk5y6Zs');
+            // Add more videos as needed
+        }
+
+        // This function creates a new YouTube player in the given element with the specified video ID.
+        function createPlayer(elementId, videoId) {
+            var player = new YT.Player(elementId, {
+                height: '169',
+                width: '300',
+                videoId: videoId,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            // You can do something when the player is ready if needed
+        }
+
+        // The API calls this function when the player's state changes.
+        function onPlayerStateChange(event) {
+            // You can do something when the player's state changes if needed
+        }
+
+        // Load the YouTube API
+        loadYouTubeAPI();
+    </script>
+</body>
+
+</html>
